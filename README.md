@@ -2,13 +2,14 @@
 Testing how i can display .glb Files on Mobile AR with QR Codes
 
 <p align="center">
-  <img src="QR Code to AR.svg" class="meinSVG" alt="QR Code zum Testen auf https://carlvonher.github.io/Web-AR-Test/">
+  <img src="QR Code to AR.svg" class="mein-svg" alt="QR Code zum Testen">
 </p>
 
 <style>
-    .meinSVG {
-        width: 200px;   /* Setzt die Breite */
-        height: auto;   /* Hält das Seitenverhältnis automatisch */
-        display: block; /* Verhindert kleine Abstände unter dem Bild */
+    .mein-svg {
+        width: 200px;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* Zentriert das Bild zusätzlich im HTML-Block */
     }
 </style>
