@@ -20,8 +20,8 @@
 
     <div class="grid-menu">
         <button onclick="loadModel('Demoszene.glb')">Web Big</button>
-        <button onclick="loadModel('floating Cube.glb')">Web Small</button>
-        <button onclick="activateAR()">AR Modus</button>
+        <button onclick="loadModel('Demoszene small.glb')">Web Small</button>
+        <button onclick="loadModel('floating Cube.glb')">Cube</button>
     </div>
 
     <div id="container">
@@ -35,27 +35,16 @@
 
     <script>
         const viewer = document.querySelector('#viewer');
-
+        const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+        
         // Funktion 1 & 2: Modell wechseln
         function loadModel(modelName) {
             viewer.src = modelName;
+            if (isFirefox) {
+                alert("Hinweis: AR-Features funktionieren am besten mit Chrome (Android) oder Safari (iOS), jedoch gar nicht auf Firefox.");
+            }
         }
 
-        // Funktion 3: AR erzwingen
-        function activateAR() {
-            viewer.src = 'floating Cube.glb';
-            // Wir geben dem Browser ein paar Millisekunden Zeit, 
-            // um das Modell zu laden, dann starten wir AR
-            setTimeout(() => {
-                viewer.activateAR();
-            }, 500); 
-        const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-
-        if (isFirefox) {
-            alert("Hinweis: AR-Features funktionieren am besten mit Chrome (Android) oder Safari (iOS).");
-        }
-
-        }
     </script>
 </body>
 </html>
