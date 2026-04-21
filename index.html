@@ -24,29 +24,33 @@
         <button onclick="loadModel('floating Cube.glb')">Cube</button>
     </div>
 
+    <div id='debug-info'></div>
+
     <div id="container">
         <model-viewer 
-    id="viewer" 
-    poster="DemoSzene Referenz.png" 
-    ar 
-    camera-controls>
+            id="viewer" 
+            poster="DemoSzene Referenz.png" 
+            ar 
+            camera-controls>
 </model-viewer>
     </div>
 
     <script>
         const viewer = document.querySelector('#viewer');
-        const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-        let notRead = true;
+        const debugBox = document.getElementById('debug-info');
+        const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
         
         // Funktion 1 & 2: Modell wechseln
         function loadModel(modelName) {
             viewer.src = modelName;
-            if (isFirefox && notRead) {
-                alert("Hinweis: AR-Features funktionieren am besten mit Chrome (Android) oder Safari (iOS), jedoch gar nicht auf Firefox.");
-                notRead = false;
+            checkBrowser();
+        }
+        
+        function checkBrowser() {
+            if (isFirefox) {
+                debugBox.innerText = "Hinweis: Bitte wechsle für AR zu Chrome oder Safari.";
             }
         }
-
     </script>
 </body>
 </html>
