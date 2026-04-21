@@ -49,6 +49,12 @@
             setTimeout(() => {
                 viewer.activateAR();
             }, 500); 
+        const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
+        if (isFirefox) {
+            alert("Hinweis: AR-Features funktionieren am besten mit Chrome (Android) oder Safari (iOS).");
+        }
+
         }
     </script>
 </body>
