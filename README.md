@@ -2,5 +2,5 @@
 Testing how i can display .glb Files on Mobile AR with QR Codes
 
 <p align="center">
-  <img src="QR Code to AR.png" alt="QR Code zum Testen auf https://carlvonher.github.io/Web-AR-Test/">
+  <img src="QR Code to AR.svg" alt="QR Code zum Testen auf https://carlvonher.github.io/Web-AR-Test/">
 </p>
