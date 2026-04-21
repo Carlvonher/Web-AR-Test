@@ -36,12 +36,14 @@
     <script>
         const viewer = document.querySelector('#viewer');
         const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+        let notRead = true;
         
         // Funktion 1 & 2: Modell wechseln
         function loadModel(modelName) {
             viewer.src = modelName;
-            if (isFirefox) {
+            if (isFirefox&&notRead) {
                 alert("Hinweis: AR-Features funktionieren am besten mit Chrome (Android) oder Safari (iOS), jedoch gar nicht auf Firefox.");
+                notRead = false;
             }
         }
 
