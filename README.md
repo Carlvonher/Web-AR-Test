@@ -6,7 +6,7 @@ Testing how i can display .glb Files on Mobile AR with QR Codes
 </p>
 
 <style>
-    .mein-svg {
+    .meinSVG {
         width: 200px;   /* Setzt die Breite */
         height: auto;   /* Hält das Seitenverhältnis automatisch */
         display: block; /* Verhindert kleine Abstände unter dem Bild */
