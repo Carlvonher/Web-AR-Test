@@ -1,0 +1,10 @@
+# Blender Backups
+*.blend1
+*.blend2
+
+# OS spezifische Dateien
+.DS_Store
+Thumbs.db
+
+# Falls du später mit Node.js arbeitest
+node_modules/
