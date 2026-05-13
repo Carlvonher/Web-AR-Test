@@ -1,60 +1,54 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
         <style>
+            /* Verhindert, dass die UI Elemente verschwinden */
             body {
                 margin: 0;
                 overflow: hidden;
             }
-            /* Button zum Zurückkehren zur Hauptseite */
-            .back-button {
+
+            /* Sorgt dafür, dass die Kamera-Ebene hinter allem liegt */
+            .a-canvas {
+                width: 100% !important;
+                height: 100% !important;
+                top: 0;
+                left: 0;
                 position: absolute;
-                top: 20px;
-                left: 20px;
-                z-index: 1000;
-                padding: 10px;
-                background: rgba(0, 0, 0, 0.5);
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
             }
         </style>
     </head>
+
     <body>
-        <button class="back-button" onclick="location.href = '../index.html'">
+        <button
+            style="position: absolute; z-index: 999; top: 10px; left: 10px"
+            onclick="window.location.href = '../index.html'"
+        >
             Zurück
         </button>
 
         <a-scene
-            mindar-image="imageTargetSrc: QR-Code.mind;"
+            mindar-image="imageTargetSrc: ./targets.mind; uiLoading: no; uiError: yes; uiScanning: yes;"
             color-space="sRGB"
             renderer="colorManagement: true, physicallyCorrectLights"
             vr-mode-ui="enabled: false"
             device-orientation-permission-ui="enabled: false"
         >
-            <a-assets>
-                <a-asset-item
-                    id="gearsModel"
-                    src="../AR Gears.glb"
-                ></a-asset-item>
-            </a-assets>
-
             <a-camera
                 position="0 0 0"
                 look-controls="enabled: false"
+                cursor="fuse: false; rayOrigin: mouse;"
+                raycaster="far: 10000; objects: .clickable"
             ></a-camera>
 
             <a-entity mindar-image-target="targetIndex: 0">
-                <a-gltf-model
-                    rotation="0 0 0"
+                <a-box
+                    color="blue"
                     position="0 0 0"
-                    scale="0.1 0.1 0.1"
-                    src="#gearsModel"
-                    animation-mixer
-                >
-                </a-gltf-model>
+                    scale="0.5 0.5 0.5"
+                ></a-box>
             </a-entity>
         </a-scene>
     </body>
