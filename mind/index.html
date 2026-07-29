@@ -12,7 +12,6 @@
                 overflow: hidden;
             }
 
-            /* Button Styling */
             .back-button {
                 position: absolute;
                 z-index: 1000;
@@ -28,7 +27,6 @@
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             }
 
-            /* Falls MindAR eine weiße Fläche zeigt, erzwingen wir die Transparenz */
             .a-canvas {
                 position: absolute;
                 top: 0;
@@ -45,6 +43,7 @@
             Zurück zum Menü
         </button>
 
+        <!-- Kein Leerzeichen nach dem Komma im Pfad! -->
         <a-scene
             mindar-image="imageTargetSrc: ./QR-Code.mind,./Hamster.mind; uiLoading: no; uiScanning: no;"
             color-space="sRGB"
